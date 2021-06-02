@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+html{
+    box-sizing: border-box;
+}
+body{
+    overflow:hidden;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("img/images.jpg");
+}
+/* quote part */
+.containar{
+    width: auto;
+    max-width: 900px;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, .65);
+    border-radius: 7px;
+    margin: auto 10px;
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+.arthorC{
+    width: 100%;
+    text-align: center;
+    margin-top:1%;
+    
+}
+.txI{
+    width: 100%;
+    padding: 20px;
+    padding-bottom:0;
+    text-align: center;
+}
+.txI i{
+font-size: 50px;
+padding-right: 3px;
+}
+.textContainar{
+    font-size: 35px;
+}
+.btnC{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.btn{
+    cursor: pointer;
+    font-size: 1.25rem;
+    border: 0;
+    border-radius: 12px;
+    outline: 0;
+    padding: 0.45rem 1.8rem;
+    color: #fff;
+    background-color: #333;
+    box-shadow: 3px 5px 3.5px black ;
+}
+#tw:hover{
+    color: #1DA1F2;
+}
+.fab{
+    font-size: 30px;
+}
+.btn:hover{
+    filter: brightness(110%);
+}
+.btn:active{
+    transform: scale(.97);
+}
+/* loading part */
+.loading{
+    width: 120px;
+    height: 120px;
+    border: 16px solid rgb(238, 236, 232);
+    border-top: 16px solid rgb(103, 103, 114);
+    border-radius: 50%;
+    animation: load 2s linear infinite ;
+}
+
+/* mobile responsiv  */
+@keyframes load {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .containar{
+        padding: 3px 0;
+    }
+    .textContainar{
+        font-size: 22px;
+    }
+    .txI{
+        width: 85%;
+        margin: auto;
+        padding-top: 0;
+    }
+    .txI i{
+        font-size: 38px;
+        padding-right: 3px;
+        }
+    h3{
+        font-size: 16px;
+    }
+    .btn{
+        padding: .5rem 17px;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+    
+    .fab{
+        font-size: 17px;
+    }
+}
