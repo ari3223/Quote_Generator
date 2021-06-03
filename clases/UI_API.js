@@ -21,27 +21,21 @@ class UI_API {
              //use try and catch for handling errors if there is any
             try{
                  //send request to our site for accessing to quotes
-                let info = await fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
-	                "method": "GET",
-	                "headers": {
-	            	"x-rapidapi-key": "3ee3262523msh49d10228497ba96p142990jsne6d3d250f10f",
-		            "x-rapidapi-host": "quotes15.p.rapidapi.com"
-	                 }
-                });
+                let info = await fetch("https://whispering-tor-04671.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json");
                 let data = await info.json(),
-                    quote   = data.content;
+                    quote   = data.quoteText;
                  //if quotes is too long search for next one
                 if(quote.length > 250){
                     getQuote();
                 }
                  //if quotes is long make fontsize smaller
-                else if(quote.length > 180){
+                 if(quote.length > 180 && quote.length < 250){
                     txPlace.style.fontSize = '25px';
-                     //now that everything is OK access and add data to the html
-                    txPlace.textContent = data.content;
-                    author.textContent = data.originator.name;
-                    uia.loadingEnd();
                 }
+                //now that everything is OK access and add data to the html
+                txPlace.textContent = quote;
+                author.textContent = data.quoteAuthor;
+                uia.loadingEnd();
             }
 
             catch(er){
